@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from typing import Optional
 ##This model is used for dataValidations 
 class Product(BaseModel):
     name:str
@@ -31,5 +31,13 @@ class Display(BaseModel):
     class Config:
         orm_mode = True
         
+class Login(BaseModel):
+    name:str
+    password:str
 
+class Token(BaseModel):
+    access_token:str
+    token_ty:str
 
+class Token_Data(BaseModel):
+    name:Optional[str]
